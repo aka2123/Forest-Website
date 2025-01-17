@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://forest/index.html">
+    <title>Oferty</title>
+    <!-- @include 'link.kit' -->
+</head>
+
+<body>
+    <!-- @include 'nav.kit' -->
+
+    <section class="section section-offer section--padding section--white" id="offer">
+        <div class=" wrapper">
+            <h1 class="section__title">oferta</h1>
+            <p class="section-offer__subtitle">Wybierz jedną z naszych wspaniałych ofert!</p>
+
+            <div class="section-offer__choose-bar">
+                <button class="section-offer__choose-btn">
+                    Jednorazowo
+                </button>
+                <button class="section-offer__choose-btn section-offer__choose-btn--choosed">
+                    Miesięcznie
+                </button>
+            </div>
+
+            <div class="section-offer__offers-box">
+
+                <div class="section-offer__card">
+                    <p class="section-offer__card-title">Demo</p>
+                    <p class="section-offer__card-money--default">$0</p>
+                    <ul class="section-offer__card-list">
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item section-offer__card-list-item--unactive"><i
+                                class="fa-solid fa-minus"></i>opcja poza pakietem
+                        </li>
+                        <li class="section-offer__card-list-item section-offer__card-list-item--unactive"><i
+                                class="fa-solid fa-minus"></i>opcja poza pakietem
+                        </li>
+                        <li class="section-offer__card-list-item section-offer__card-list-item--unactive"><i
+                                class="fa-solid fa-minus"></i>opcja poza pakietem
+                        </li>
+                    </ul>
+                    <a href="" class="section-offer__card-btn">Wybierz</a>
+                </div>
+                <div class="section-offer__card">
+                    <p class="section-offer__card-title">Standard<span class="section-offer__card-title--monthly"> za
+                            miesiąc</span></p>
+                    <div class="section-offer__card-money">
+                        <p class="section-offer__card-money--once">$99</p>
+                        <p class="section-offer__card-money--monthly"> $50</p>
+                    </div>
+                    <!-- 1. make --sale visible by JS and 2.skreśl section-offer__card-money,  when monthly payment is focused -->
+
+                    <ul class="section-offer__card-list">
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item section-offer__card-list-item--unactive"><i
+                                class="fa-solid fa-minus"></i>opcja poza pakietem
+                        </li>
+                        <li class="section-offer__card-list-item section-offer__card-list-item--unactive"><i
+                                class="fa-solid fa-minus"></i>opcja poza pakietem
+                        </li>
+                    </ul>
+                    <a href="" class="section-offer__card-btn section-offer__card-btn--highlighted">Wybierz</a>
+                </div>
+                <div class="section-offer__card">
+                    <p class="section-offer__card-title">Premium<span class="section-offer__card-title--monthly"> za
+                            miesiąc</span></p>
+                    <div class="section-offer__card-money">
+                        <p class="section-offer__card-money--once">$299</p>
+                        <p class="section-offer__card-money--monthly"> $90</p>
+                    </div>
+                    <ul class="section-offer__card-list">
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                    </ul>
+                    <a href="" class="section-offer__card-btn">Wybierz</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-quote">
+
+
+        <i class="fa-solid fa-chevron-left section-quote__icon-arrow section-quote__icon-arrow--left"></i>
+
+        <div class="section-quote__box" data-number="1">
+            <img src="./dist/img/attractive-1869761_640.min.jpg" alt="zdjęcie osoby" class="section-quote__img">
+
+            <p class="section-quote__title">Name Surname</p>
+            <p class="section-quote__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, enim Lorem
+                ipsum dolor sit amet consectetur.</p>
+            <div class="section-quote__icon-box">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+
+        <div class="section-quote__box section-quote__box--visible" data-number="2">
+            <img src="./dist/img/happy-1836445_640.min.jpg" alt="" class="section-quote__img">
+
+            <p class="section-quote__title">Name Surname</p>
+            <p class="section-quote__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, enim Lorem
+                ipsum dolor sit amet consectetur.</p>
+            <div class="section-quote__icon-box">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+
+        <div class="section-quote__box" data-number="3">
+            <img src="./dist/img/human-3782189_640.min.jpg" alt="" class="section-quote__img">
+
+            <p class="section-quote__title">Name Surname</p>
+            <p class="section-quote__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, enim Lorem
+                ipsum dolor sit amet consectetur.</p>
+            <div class="section-quote__icon-box">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+        </div>
+
+
+        <i class="fa-solid fa-chevron-right section-quote__icon-arrow section-quote__icon-arrow--right"></i>
+    </section>
+    <!-- @include 'footer.kit' -->
+    <!-- @include 'script.kit' -->
+</body>
+
+</html>

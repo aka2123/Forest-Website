@@ -1,0 +1,35 @@
+@use './color' as *;
+
+@mixin section-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin shadow-light {
+	box-shadow: 0 0.1em 0.4em rgba(39, 38, 38, 0.274);
+	border: 1px solid rgba(85, 82, 82, 0.253);
+	border-radius: 0.5em;
+}
+
+@mixin light-border{
+	box-shadow: 0 0 0.2em rgba(190, 183, 183, 0.11);
+	border:2px solid rgba(190, 183, 183, 0.795);
+	border-radius: 0.5em;
+}
+
+@mixin btn{
+	padding: 1em 2em;
+	font-size: 1rem;
+	color: $primary;
+	background-color: $link-btn;
+	box-shadow: 0 0.1em 0.4em rgba(39, 38, 38, 0.274);
+	border: 1px solid rgba(85, 82, 82, 0.253);
+	border-radius: 0.5em;
+	transition: background-color .3s, color .3s;
+	&:hover {
+		background-color: $link-hover;
+		color: $primary;
+	}
+}
+

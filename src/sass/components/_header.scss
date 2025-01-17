@@ -1,0 +1,37 @@
+@use '../utilities/color' as *;
+@use '../utilities/mixin' as m;
+
+.header {
+	position: relative;
+	width: 100%;
+	background-image: url('../img/jungle-1807476_640.min.webp');
+	background-position: center;
+	background-size: cover;
+	color: $primary;
+	&__box {
+		@include m.section-center;
+		flex-direction: column;
+		width: 100%;
+		height: 400px;
+        padding: 0 4em;
+	}
+	&__column{
+		width: 70%;
+		z-index: 1;
+	}
+	&__title {
+		font-size: clamp(.8rem, 1.2rem, 1.6rem);
+		font-weight: 300;
+        // ?? nie jest OK wielkość
+	}
+	&__text {
+		font-size: clamp(1.5rem, 2vw, 2.5rem);
+		font-weight: 600;
+	}
+}
+
+@media (min-width: 576px) {
+	.header {
+		background-image: url('../img/jungle-1807476_1280.min.webp');
+	}
+}

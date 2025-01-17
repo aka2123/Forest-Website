@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e0152817b3.js" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./dist/css/style.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="nav-bar">
+
+    <button class="nav-bar__btn-burger"><i class="fa-solid fa-bars"></i></button>
+
+    <div class="nav-bar__menu">
+
+        <!-- <a href="index.html" class="nav-bar__title">
+            <i class="fa-solid fa-tree"></i> Forest</a> -->
+        <ul class="nav-bar__list">
+            <li class="nav-bar__list-item"><a href="index.html">Home</a></li>
+            <li class="nav-bar__list-item"><a href="index.html#about-us">O nas</a></li>
+            <li class="nav-bar__list-item"><a href="prices.html">Oferta</a></li>
+            <li class="nav-bar__list-item"><a href="contact.html">Kontakt</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <section class="section-offer">
+        <div class="wrapper">
+            <h2 class="section__title">oferta</h2>
+            <p class="section-offer__subtitle">Wybierz jedną z naszych wspaniałych ofert!</p>
+
+            <div class="section-offer__choose-bar">
+                <button class="section-offer__choose-btn">
+                    <!-- ?? btn to block, inline?  -->
+                    Jednorazowo
+                </button>
+                <button class="section-offer__choose-btn section-offer__choose-btn--monthly">
+                    Miesięcznie
+                </button>
+            </div>
+
+            <div class="section-offer__offers-box">
+
+                <div class="section-offer__card">
+                    <!-- make it UNvisible by JS when monthly payment is focused -->
+                    <p class="section-offer__card-title">Demo</p>
+                    <p class="section-offer__card-money">$0</p>
+                    <ul class="section-offer__card-list">
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-minus"></i>opcja poza pakietem
+                        </li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-minus"></i>opcja poza pakietem
+                        </li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-minus"></i>opcja poza pakietem
+                        </li>
+                    </ul>
+                    <a href="" class="section-offer__card-btn">Wybierz</a>
+                </div>
+                <div class="section-offer__card">
+                    <p class="section-offer__card-title">Standard<span class="section-offer__card-title--monthly"> za
+                            miesiąc</span></p>
+                    <p class="section-offer__card-money">$99<span class="section-offer__card-money--monthly"> $50</span>
+                    </p>
+                    <!-- 1. make --sale visible by JS and 2.skreśl section-offer__card-money,  when monthly payment is focused -->
+
+                    <ul class="section-offer__card-list">
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-minus"></i>opcja poza pakietem
+                        </li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-minus"></i>opcja poza pakietem
+                        </li>
+                    </ul>
+                    <a href="" class="section-offer__card-btn section-offer__card-btn--highlighted">Wybierz</a>
+                </div>
+                <div class="section-offer__card">
+                    <p class="section-offer__card-title">Premium<span class="section-offer__card-title--monthly"> za
+                            miesiąc</span></p>
+                    <p class="section-offer__card-money">$299<span class="section-offer__card-money--sale"> $90</span>
+                    </p>
+                    <!-- 1. make --sale visible by JS and 2.skreśl section-offer__card-money,  when monthly payment is focused -->
+                    <ul class="section-offer__card-list">
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                        <li class="section-offer__card-list-item"><i class="fa-solid fa-check"></i>opcja w pakiecie</li>
+                    </ul>
+                    <a href="" class="section-offer__card-btn">Wybierz</a>
+                </div>
+                <a href="" class="section-offer__link">Zabacz więcej</a>
+                <!-- dodaj link -->
+            </div>
+        </div>
+    </section>
+    <section class="section-quote">
+        <i class="fa-solid fa-chevron-left"></i>
+
+        <div class="section-quote__box">
+            <img src="" alt=""  class="section-quote__img">
+            <p class="section-quote__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, enim Lorem ipsum dolor sit amet consectetur.</p>
+            <i class="fa-solid fa-star"></i>
+        </div>
+
+     <div class="section-quote__box section-quote__box--visible">
+            <img src="" alt=""  class="section-quote__img">
+            <p class="section-quote__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, enim Lorem ipsum dolor sit amet consectetur.</p>
+            <i class="fa-solid fa-star"></i>
+        </div>
+        <div class="section-quote__box">
+            <img src="" alt=""  class="section-quote__img">
+            <p class="section-quote__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, enim Lorem ipsum dolor sit amet consectetur.</p>
+            <i class="fa-solid fa-star"></i>
+        </div>
+  
+        <i class="fa-solid fa-chevron-right"></i>
+    </section>
+    <footer class="footer">
+   
+        <div class="footer__box">
+            <a href="index.html" class="footer__title">
+                <i class="fa-solid fa-tree"></i> Forest</a>
+
+            <div class="footer__box-list">
+                <div class="footer__box-list-column">
+                    <p class="footer__list-title">O nas</p>
+                    <ul class="footer__list">
+                        <li class="footer__list-item">Historia</li>
+                        <li class="footer__list-item">Parki</li>
+                        <li class="footer__list-item">Opinie</li>
+                    </ul>
+                </div>
+                <div class="footer__box-list-column">
+                    <p class="footer__list-title">Nasza firma</p>
+                    <ul class="footer__list">
+                        <li class="footer__list-item">Praca</li>
+                        <li class="footer__list-item">Kadry</li>
+                        <li class="footer__list-item">Zarząd</li>
+                    </ul>
+                </div>
+                <div class="footer__box-list-column">
+                    <p class="footer__list-title">Dokumenty</p>
+                    <ul class="footer__list">
+                        <li class="footer__list-item">Wnioski</li>
+                        <li class="footer__list-item">Rezerwacje</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="footer__box-bottom">
+            <p class="footer__text-company">
+                &copy; <span class="footer__text-year"></span> Forest Group Company Ltd.</p>
+        </div>
+</footer>
+    <script src="./src/js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,160 @@
+@use '../utilities/color' as *;
+
+.nav-bar {
+	&__btn-burger {
+		position: fixed;
+		top: 0;
+		right: 0;
+		padding: 1em;
+		font-size: 2rem;
+		background: none;
+		border: none;
+		color: $primary;
+		cursor: pointer;
+		z-index: 100;
+
+		&:hover,
+		&--on-white-section {
+			color: $ascend;
+		}
+		&--black {
+			color: $secondary;
+		}
+	}
+
+	&__menu {
+		position: fixed;
+		top: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 100vh;
+		background-color: $primary;
+		opacity: 0;
+		transform: translateX(100%);
+		transition: transform cubic-bezier(0.47, 0, 0, 0.715) 0.3s, opacity 0.3s;
+		z-index: 10;
+		overflow-y: hidden;
+		&--visible {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+	&__title {
+		display: none;
+	}
+	&__list {
+		list-style: none;
+	}
+	&__list-item {
+		margin-bottom: 1.6em;
+		transform: translateX(300%);
+		&--animated {
+			animation: shelve 1s forwards;
+			&:nth-child(1) {
+				animation-delay: 0.1s;
+			}
+			&:nth-child(2) {
+				animation-delay: 0.2s;
+			}
+			&:nth-child(3) {
+				animation-delay: 0.3s;
+			}
+			&:nth-child(4) {
+				animation-delay: 0.4s;
+			}
+		}
+	}
+	&__list-link {
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			top: 110%;
+			left: 0;
+			transform-origin: right;
+			transform: scaleX(0);
+			width: 100%;
+			height: 0.2em;
+			background-color: $ascend;
+			transition: transform 0.3s;
+		}
+		&:hover::before {
+			transform: scaleX(1);
+			transform-origin: left;
+		}
+	}
+	&__list-item a,
+	&__title {
+		color: $secondary;
+		font-size: 1.4rem;
+		text-decoration: none;
+		transition: color 0.3s;
+		&:hover {
+			color: $secondary;
+			// animation on mobile
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	// install px mesure plugin for chrome
+	.nav-bar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: $primary;
+		z-index: 100;
+
+		&__btn-burger {
+			display: none;
+		}
+		&__title {
+			display: inline-block;
+			font-size: 1.8rem;
+		}
+		&__menu {
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			padding: 0 1em;
+			width: 100vw;
+			height: auto;
+			opacity: 1;
+			transform: translateX(0);
+		}
+		&__list {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+		}
+		&__list-item {
+			margin-bottom: 0;
+			padding: 2.5em 2em;
+			pointer-events: none;
+			transform: translateX(0);
+			transition: background-color 0.3s;
+			&:hover,
+			&--active {
+				background-color: $secondary;
+			}
+			&--animated {
+				animation: none;
+			}
+		
+
+		&:hover .nav-bar__list-link,
+		.nav-bar__list-link--active {
+			color: $primary;
+		}
+}
+		&__list-link {
+			font-size: 1rem;
+			pointer-events: auto;
+			transition: color 0.3s;
+		}
+	}
+}

@@ -1,0 +1,571 @@
+@use './utilities' as *;
+@use './components' as *;
+@use './devices' as *;
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Montserrat', 'sans-serif';
+	background-color: $primary;
+	color: $secondary;
+	overflow-x: hidden;
+}
+
+.body--menu-open {
+	overflow-y: hidden;
+}
+
+a {
+	color: $secondary;
+	text-decoration: none;
+	transition: color 0.3s;
+	&:hover {
+		color: $link-hover;
+	}
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.section--padding {
+	padding: 4em 2em;
+}
+
+.section__title {
+	margin: 1.5em 0;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2rem;
+	font-weight: normal;
+}
+
+.background {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(27, 26, 26, 0.596);
+}
+
+.section-about-us {
+	width: 100%;
+	// height: 50em;
+	// bez height, bo el nie mieszczą się w rodzicu
+	// stylować em? px?
+	&__box {
+		@include section-center;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 2em 0;
+		width: 100%;
+		// height: 60%;
+		gap: 5em;
+	}
+	&__img,
+	&__box-text {
+		width: clamp(20em, 30vw, 40em);
+		// stylować em? px?
+		// hard - na małych urządzeniach padding nie działa na te el. i nie chcą rosnąć
+	}
+	&__title {
+		margin-bottom: 0.5em;
+		font-size: 1.2rem;
+		font-weight: bold;
+	}
+	&__text {
+		font-size: 0.8rem;
+	}
+}
+
+.section-img {
+	position: relative;
+	width: 100%;
+	height: 300px;
+	@include section-center;
+	background-image: url('../img/girl-5785590_640.min.webp');
+	background-position: center;
+	background-size: cover;
+
+	&__box {
+		padding: 2em 0;
+		width: clamp(25em, 50vw, 60em);
+		border: 1px solid $primary;
+		z-index: 1;
+	}
+	&__text {
+		text-align: center;
+		font-size: 1.2rem;
+		font-weight: 500;
+		color: $primary;
+	}
+}
+
+.section-offer {
+	text-align: center;
+
+	&__subtitle {
+		margin-bottom: 2em;
+		font-size: 1rem;
+	}
+	.section__title {
+		margin-bottom: 0.5em;
+	}
+
+	&__offers-box,
+	&__card,
+	&__link-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+		padding: 2em 3em;
+	}
+	&__offers-box {
+		gap: 5em;
+	}
+	&__card {
+		position: relative;
+		width: 25em;
+		height: 42em;
+		@include shadow-light;
+
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 2px solid $secondary;
+			border-radius: 0.5em;
+			z-index: -1;
+			opacity: 0;
+		}
+		&:hover::after,
+		&:hover::before {
+			animation: card-pulse 1.5s linear backwards;
+		}
+		&:hover::before {
+			animation-delay: 0.8s;
+		}
+	}
+	&__card-title {
+		margin-bottom: 0.5em;
+		font-size: 1.6rem;
+	}
+	&__card-title--monthly-unvisible {
+		display: none;
+	}
+
+	&__card-money,
+	&__card-money--default {
+		margin-bottom: 1em;
+		font-size: 1.8rem;
+		font-weight: bold;
+	}
+	&__card-money {
+		@include section-center;
+	}
+	&__card-money--once {
+		text-decoration-line: line-through;
+		font-weight: normal;
+	}
+	&__card-money--once-decoration-none {
+		text-decoration-line: none;
+		font-weight: bold;
+	}
+	&__card-money--monthly {
+		display: inline-block;
+		margin-top: 0.5em;
+		margin-left: 0.2em;
+	}
+	&__card-money--monthly-unvisible {
+		display: none;
+	}
+	&__card-list {
+		margin-bottom: 1em;
+		list-style: none;
+		text-align: left;
+	}
+	&__card-list-item {
+		margin-bottom: 0.8em;
+		font-size: 1rem;
+	}
+
+	&__card-list-item--unactive {
+		color: #887c7c;
+	}
+	.fa-check {
+		color: $ascend;
+	}
+	.fa-check,
+	.fa-minus {
+		margin-right: 0.2em;
+	}
+
+	&__card-btn {
+		@include btn;
+		width: 70%;
+
+		&--highlighted {
+			background-color: $ascend;
+		}
+	}
+
+	&__link {
+		@include btn;
+	}
+
+	&__choose-bar {
+		@include section-center;
+		margin: 2em 0;
+		padding: 1em;
+	}
+	&__choose-btn {
+		padding: 1em;
+		width: clamp(8em, 35%, 15em);
+		background-color: $primary;
+		// border: 1px solid $background;
+		// box-shadow: 0 0 0.5em $background;
+		@include shadow-light;
+		font-size: 1rem;
+		cursor: pointer;
+		transition: background-color 0.3s, color 0.3s;
+
+		&:last-child {
+			border-left: none;
+			border-start-start-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		&:first-child {
+			border-right: none;
+			border-start-end-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		&--choosed {
+			background-color: $ascend;
+		}
+		&:hover {
+			background-color: $link-hover;
+			color: $primary;
+		}
+	}
+}
+
+.section-quote {
+	position: relative;
+	padding: 2em;
+	width: 100%;
+	height: 30em;
+	background-color: $secondary;
+	overflow: hidden;
+	// background-color: $background;
+
+	&__box {
+		position: absolute;
+		translate: -50% -50%;
+		top: 50%;
+		padding: 3em;
+		width: clamp(30em, 70vw, 50em);
+		background-color: $primary;
+		@include shadow-light;
+		opacity: 0;
+		transition: transform cubic-bezier(0.445, 0.05, 0.55, 0.95) 0.4s, opacity 0.4s;
+	}
+	&__box--visible {
+		left: 50%;
+		opacity: 1;
+		transform: translateX(0);
+	}
+	&__box--left {
+		transform: translateX(-150%);
+	}
+	&__box--right {
+		transform: translateX(150%);
+	}
+	&__img {
+		position: absolute;
+		top: -15%;
+		right: 15%;
+		width: 7em;
+		height: 7em;
+		object-fit: cover;
+		border-radius: 5em;
+	}
+	&__title {
+		margin-bottom: 0.5em;
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
+	&__text {
+		margin-bottom: 0.5em;
+		font-size: 1rem;
+	}
+	&__icon-box {
+		padding: 0.5em 2em;
+		text-align: right;
+		i {
+			color: $ascend;
+			font-size: 1rem;
+		}
+	}
+	&__icon-arrow {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		font-size: 1.6rem;
+		padding: 2em;
+		cursor: pointer;
+		color: $primary;
+		&:first-child {
+			left: 10%;
+		}
+		&:last-child {
+			right: 10%;
+		}
+	}
+}
+
+.section-contact {
+	padding: 5em 2em;
+	width: 100%;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		gap: 2em;
+		padding: 2em 2em;
+		background-color: $background;
+		border-radius: 1em;
+	}
+
+	&__text {
+		margin-top: -2em;
+		margin-bottom: 2em;
+	}
+	&__form,
+	&__form-box,
+	&__column {
+		display: flex;
+		flex-direction: column;
+	}
+	&__column{
+		width: 40em;
+		height: 70em;
+	}
+	&__form,
+	.msg-status {
+		width: clamp(15em, 100%, 50em);
+	}
+
+	&__form {
+		height: 90%;
+	}
+	&__form-box {
+		margin: 1em 0;
+		width: 100%;
+	}
+	label,
+	&__error {
+		margin-left: 0.2em;
+		font-size: 1.4em;
+	}
+	&__error {
+		display: inline-block;
+        margin: 0.2em 0 .6em 0.2em;
+		height: 2em;
+		font-size: 1em;
+		color: $error-dark;
+		visibility: hidden;
+	}
+
+	input,
+	textarea,
+	label,
+	&__form-btn {
+		width: 100%;
+	}
+	input,
+	textarea {
+		margin: 0.5em 0;
+		padding: 1em 0.5em;
+		@include light-border;
+		font-family: 'Montserrat', sans-serif;
+	}
+
+	textarea {
+		resize: vertical;
+		min-height: 10em;
+		max-height: 20em;
+	}
+
+	&__form-btn {
+		padding: 1em 0;
+		@include btn;
+		cursor: pointer;
+		// font size zmienia wymiary buttona
+	}
+
+	.msg-status {
+		position: absolute;
+		top: 10%;
+		left: 50%;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		padding: 2em 0;
+		transform: translateX(-50%);
+		transform: translateY(-150%);
+		transition: transform 0.3s;
+
+		&--success,
+		&--error {
+			transform: translateY(0);
+			display: flex;
+		}
+		&--success {
+			background-color: $ascend;
+		}
+		&--error {
+			background-color: rgb(187, 50, 26);
+		}
+	}
+	&__form-box--error input, &__form-box--error textarea {
+		border: 2px solid $error-dark;
+		background-color: $error;
+		background-color: rgba($color: $error, $alpha: .45);
+	}
+	&__form-box--error &__error {
+		visibility: visible;
+	}
+	&__map-box,
+	&__map {
+		width: 100%;
+		border-radius: 1em;
+	}
+	&__map {
+		height: 30em;
+	}
+	&__map-box {
+		padding: 0 3em 3em;
+		background-color: $secondary;
+	}
+	&__map-text {
+		color: $primary;
+	}
+}
+@media (min-width: 576px) {
+	.section-offer {
+		&__card {
+			width: 30em;
+		}
+	}
+	.section-contact {
+		padding: 10em 4em;
+		width: 100%;
+	}
+}
+@media (min-width: 768px) {
+	.section-about-us {
+		&__box {
+			flex-direction: row;
+			align-items: start;
+			justify-content: center;
+		}
+	}
+
+	.section-img {
+		background-image: url('../img/girl-5785590_1280.min.webp');
+		&__box {
+			padding: 3em 0;
+			min-width: 60em;
+			width: 60%;
+			max-width: 80em;
+		}
+		&__text {
+			font-size: 1.8rem;
+		}
+	}
+	.section-offer {
+		&__offers-box {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+		&__link-box {
+			justify-content: end;
+			width: 30em;
+			height: 42em;
+		}
+	}
+
+	.section-contact {
+		&__form-box-container {
+			display: flex;
+			justify-content: space-between;
+			.section-contact__form-box {
+				width: 45%;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.section-offer {
+		&__offers-box {
+			justify-content: center;
+		}
+		&__link-box {
+			height: auto;
+		}
+	}
+
+	.section-contact {
+		.wrapper {
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+		&__column {
+			align-items: start;
+		}
+		.section__title {
+			display: inline-block;
+			width: 100%;
+			text-align: left;
+		}
+
+		&__map-box {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			padding: 0 3em 3em;
+			background-color: $secondary;
+			width: clamp(40em, 40%, 60em);
+			border-radius: 1em;
+		}
+		&__map {
+			width: 100%;
+			height: 60em;
+			border-radius: 1em;
+		}
+		&__map-text {
+			color: $primary;
+		}
+	}
+}

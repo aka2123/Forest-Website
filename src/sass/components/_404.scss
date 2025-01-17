@@ -1,0 +1,37 @@
+@use '../utilities/color' as *;
+@use '../utilities/mixin' as *;
+
+.section-error {
+	@include section-center;
+	flex-direction: column;
+    margin-top: 3.2em;
+    padding: 4em;
+	height: 90vh;
+    gap: 5em;
+	&__title {
+		margin-bottom: 0.5em;
+        text-align: left;
+        font-size: 2rem;
+	}
+    &__text{
+        font-size: 1.2rem;
+    }
+	&__img {
+        width: 15em;
+        height: 15em;
+		background-image: url('../img/sign-159285_640.min.png');
+		background-position: center;
+		background-size: contain;
+        background-repeat: no-repeat;
+	}
+}
+
+@media (min-width: 768px) {
+	.section-error {
+		&__img {
+            width: 20em;
+            height: 20em;
+			background-image: url('../img/sign-159285_1280.min.png');
+		}
+	}
+}

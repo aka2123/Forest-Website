@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- @include 'link.kit' -->
+    <title>Kontakt</title>
+</head>
+
+<body>
+    <!-- @include 'nav.kit' -->
+
+    <section class="section section-contact section--white" id="contact">
+        <div class="wrapper">
+            <div class="section-contact__column">
+
+                <h1 class="section__title">Skontaktuj się z nami</h1>
+                <p class="section-contact__text">Masz pytanie lub prośbe? Jesteśmy dostępni 00 na 00 i chętnie Ci odpowiemy.</p>
+
+                <form action="mail.php" method="post" class="section-contact__form">
+                    <div class="section-contact__form-box-container">
+
+                        <div class="section-contact__form-box">
+
+                            <label for="name">Imię:</label>
+                            <input type="text" id="name" name="name" placeholder="Twoje imię">
+                            <p class="section-contact__error">błąd
+                            </p>
+                        </div>
+
+                        <div class="section-contact__form-box ">
+                            <label for="surname">Nazwisko:</label>
+                            <input type="text" id="surname" placeholder="Twoje nazwisko">
+                            <p class="section-contact__error">błąd
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="section-contact__form-box">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" name="email" placeholder="Twój email">
+                        <p class="section-contact__error"></p>
+                    </div>
+                    <div class="section-contact__form-box">
+                        <label for="phone-number">Numer Telefonu:</label>
+                        <input type="number" id="phone-number" placeholder="Twój numer telefonu" maxlength="9">
+                        <p class="section-contact__error">błąd</p>
+                    </div>
+                    <div class="section-contact__form-box">
+                        <label for="msg">Wiadomość:</label>
+                        <textarea id="msg" name="msg" placeholder="Napisz wiadomość"></textarea>
+                        <p class="section-contact__error">błąd</p>
+                    </div>
+
+                    <button class="section-contact__form-btn">Wyślij</button>
+                </form>
+                <p class="msg-status"></p>
+            </div>
+
+
+
+            <div class="section-contact__map-box">
+                <p class="section-contact__map-text section__title">Mapa</p>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32508.14854316089!2d19.866395117896527!3d50.08897612401862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165a326d015c3b%3A0x47a12cd367a1f34e!2sRestauracja%20McDonald&#39;s!5e0!3m2!1spl!2spl!4v1735723573079!5m2!1spl!2spl"
+                     style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" class="section-contact__map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <!-- @include 'footer.kit' -->
+    <!-- @include 'script.kit' -->
+</body>
+
+</html>
